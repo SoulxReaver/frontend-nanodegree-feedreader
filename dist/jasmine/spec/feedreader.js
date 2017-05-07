@@ -1,0 +1,1 @@
+$(function(){describe("RSS Feeds",function(){it("are defined",function(){expect(allFeeds).toBeDefined(),expect(allFeeds.length).not.toBe(0)})})}());
