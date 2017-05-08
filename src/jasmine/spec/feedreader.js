@@ -26,17 +26,19 @@ $(function() {
             expect(allFeeds.length).not.toBe(0);
         });
 
+        it('ensures allFeeds has URL defined and not empty', function() {
+            allFeeds.forEach(function(feed) {
+                expect(feed.url).toBeDefined();
+                expect(feed.url).toMatch(/[Aa0-Za9+]/);
+            });
+        });
 
-        /* TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a URL defined
-         * and that the URL is not empty.
-         */
-
-
-        /* TODO: Write a test that loops through each feed
-         * in the allFeeds object and ensures it has a name defined
-         * and that the name is not empty.
-         */
+        it('ensures allFeeds has name defined and not empty', function() {
+            allFeeds.forEach(function(feed) {
+                expect(feed.name).toBeDefined();
+                expect(feed.name).toMatch(/[Aa0-Za9+]/);
+            });
+        });
     });
 
 
