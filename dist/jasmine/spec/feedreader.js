@@ -56,14 +56,11 @@ $(function() {
 
     describe('Initial Entries', function() {
         beforeEach(function(done) {
-            loadFeed(0, function() {
-                done();
-            });
+            loadFeed(0, done);
         });
 
-        it('ensures there is at least a single .entry element within the .feed container', function(done) {
-            expect($('.feed').find('.entry').length).toBeGreaterThan(0);
-            done();
+        it('ensures there is at least a single .entry element within the .feed container', function() {
+            expect($('.feed .entry').length).toBeGreaterThan(0);
         });
     });
 
@@ -73,15 +70,12 @@ $(function() {
             loadFeed(0, function() {
                 prevFeed = $('.feed').html();
 
-                loadFeed(1, function () {
-                    done();
-                });
+                loadFeed(1, done);
             });
         });
 
-        it('ensures when a new feed is loaded by the loadFeed function that the content actually changes.', function (done) {
-            expect($('.feed').html()).not.toBe(prevFeed)
-            done();
+        it('ensures when a new feed is loaded by the loadFeed function that the content actually changes.', function () {
+            expect($('.feed').html()).not.toBe(prevFeed);
         });
     });
 }());
